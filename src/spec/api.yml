@@ -1,0 +1,70 @@
+openapi: 3.0.3
+info:
+  title: Test task - OpenAPI 3.0
+  description: OpenApi for test task
+  termsOfService: http://swagger.io/terms/
+  contact:
+    email: myilinoyd@mail.com
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  version: 1.0.0
+tags:
+  - name: main
+paths:
+  /rewards:
+    get:
+      tags:
+        - main
+      summary: Get info about employees rewards
+      operationId: getRewards
+      responses:
+        '200':
+          description: successful operation
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Reward'
+
+  /import/custom-dump:
+    post:
+      tags:
+        - main
+      summary: Import database dump with custom test format
+      operationId: createEmployee
+      requestBody:
+        content:
+          text/plain:
+            schema:
+              type: string
+      responses:
+        default:
+          description: successful operation
+
+components:
+  schemas:
+    Reward:
+      type: array
+      items:
+        type: object
+        properties:
+          id:
+            type: integer
+            example: 1
+          name:
+            type: string
+            example: John
+          surname:
+            type: string
+            example: Doe
+          employeeTotalDonation:
+            type: integer
+            example: 499.1483232
+          percentage:
+            type: integer
+            example: 7.06098516830878
+          reward:
+            type: integer
+            example: 706.098516830878

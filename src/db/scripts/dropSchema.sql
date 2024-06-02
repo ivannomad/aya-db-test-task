@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS donation;
+
+DROP TABLE IF EXISTS rate;
+
+DROP TABLE IF EXISTS salary;
+
+DROP TABLE IF EXISTS employee;
+
+DROP TABLE IF EXISTS department;
